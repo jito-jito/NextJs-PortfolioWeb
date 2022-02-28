@@ -4,6 +4,9 @@
     height: 40px;
     font-family: $font-style1;
     color: $font-color1;
+    background: $background-color0;
+
+    // padding: 0;
 
 
     &-title {
@@ -25,8 +28,9 @@
         }
 
         &-item {
+           
             list-style: none;
-            margin: 0 8px;
+            margin: 0 13px;
 
 
             & > a {
@@ -43,29 +47,33 @@
     }
 
 
-    @media (max-width: 540px) {
-
+    @media (max-width: 596px) {
+        position: relative;
+        height: 60px;
 
         &-nav {
-            // @include display-flex-column;
+            position: absolute;
+            right: 45px;
+            bottom: -100px;
             display: block;
-            // position: relative;
+            text-align: end;
+            background: #2d76a6a9;
 
 
             &-menu {
-                // @include display-flex-row;
+                position: relative;
                 display: block;
                 height: 100%;
-
-                // & > img {
-                //     height: inherit;
-                // }
+                margin: 0;
+                padding: 10px 0;
                 
                 
             }
             
             &-item {
                 display: none;
+                width: 100px;
+                height: 25px;
             }
 
             &-container {
@@ -80,5 +88,11 @@
         }
     
     
+    }
+
+    @media (max-width: 420px) {
+        &-nav {
+            right: 25px;
+        }
     }
 }

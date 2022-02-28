@@ -1,0 +1,72 @@
+.skills {
+    @include font-main;
+    background-color: $background-color4;
+
+
+    &-titleContainer {
+        @include display-flex-row;
+    }
+
+    &-title {
+        margin-top: 30px;
+    }
+
+    &-image {
+        position: relative;
+        bottom: 115px;
+        width: 265px;
+        height: 10px;
+        margin: 0;
+
+        > img {
+            width: 250px;
+            height: 229px;
+        }
+    }
+
+    &-technologiesContainer, &-toolsContainer {
+        @include display-flex-row;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+    }
+
+    &-toolsContainer {
+        margin-bottom: 40px;
+        
+    }
+
+
+    @media (max-width: 670px) {
+
+        &-title {
+            width: 100%;
+            margin-top: 60px;
+        }
+
+        &-image {
+    
+            > img {
+                width: 212px;
+                height: 195px;
+            
+            }
+        }
+    }
+
+    
+    @media (max-width: 580px) {
+        &-title {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+
+        &-image {
+            display: none;
+        }
+        &-tools-title, &-technologies-title {
+            text-align: center;
+        }
+    }
+}

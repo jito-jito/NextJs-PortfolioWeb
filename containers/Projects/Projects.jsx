@@ -7,7 +7,7 @@ export default function Projects({ children }) {
 
     return(
         <>
-            <section className="page-container projects">
+            <section className="page-container projects" id="projects">
                 <h1 className="projects-title">Proyectos:</h1>
                 { children }
             </section>

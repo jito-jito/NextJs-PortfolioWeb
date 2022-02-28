@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,500;1,700&display=swap');
 
+$background-color0: #2D75A6;
 $background-color1: #2980B9;
 $background-color2: #457A86;
 $background-color3: #4C8E9D;
+$background-color4: #4F6266;
+$background-color5: #313131;
+$background-color6: #262626;
 $background-card-color1: #4F5456;
 $bright-color: #fff;
 $font-color1: #fff;
@@ -30,7 +34,7 @@ $font-style1:'Roboto', sans-serif;
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   margin: 0;
   background-color: $background-color1;
@@ -38,13 +42,16 @@ body {
 
 
 @import '../components/ProjectCard/ProjectCard.scss';
+@import '../components/SkillItem/SkillItem.scss';
+@import '../components/ContactItem/ContactItem.scss';
 
 @import '../containers/Header/Header.scss';
 @import '../containers/Hero/Hero.scss';
 @import '../containers/About/About.scss';
 @import '../containers/Projects/Projects.scss';
-
-
+@import '../containers/Skills/Skills.scss';
+@import '../containers/Contact/Contact.scss';
+@import '../containers/Footer/Footer.scss';
 
 .page-container {
   width: 100%;
@@ -65,14 +72,35 @@ body {
   
 
   @media (max-width: 1010px) {
-    padding: 0 150px;
+    padding: 5px 150px;
+
+    .header {
+      padding: 0px 150px;
+    }  
+    
   }
 
   @media (max-width: 960px) {
-    padding: 0 100px;
+    padding: 5px 100px;
+
+    .header {
+      padding: 0px 100px;
+    }  
   }
 
   @media (max-width: 850px) {
-    padding: 0 50px;
+    padding: 5px 50px;
+
+    .header {
+      padding: 0px 50px;
+    }  
+  }
+
+  @media (max-width: 420px) {
+    padding: 5px 30px;
+
+    .header {
+      padding: 0px 30px;
+    }  
   }
 }

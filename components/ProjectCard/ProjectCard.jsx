@@ -2,8 +2,11 @@ import React from "react";
 import Image from "next/image";
 
 
-export default function ProjectCard({ img, title, description, technologies }) {
+export default function ProjectCard({ img, title, description, technologies, link }) {
 
+    function openProject(e, link) {
+        window.open(link)
+    }
 
     return(
         <>
@@ -23,7 +26,7 @@ export default function ProjectCard({ img, title, description, technologies }) {
                     <h4 className="projectCard-subTitle">Technologies</h4>
                     <div className="projectCard-detailsContainer">
                         <p  className="projectCard-technologies">{technologies}</p>
-                        <button className="projectCard-button"> see in web</button>
+                        <button className="projectCard-button" onClick={(e) => openProject(e, link)}> see in web</button>
                     </div>
                 </section> 
             </article>

@@ -16,16 +16,16 @@ export default function Header() {
                     <nav className="header-nav">
                     
                         <li className="header-nav-item">
-                            <a href="">About me</a>
+                            <a href="#about">Sobre mí</a>
                         </li>
                         <li className="header-nav-item">
-                            <a href="">Projects</a>
+                            <a href="#projects">Proyectos</a>
                         </li>
                         <li className="header-nav-item">
-                            <a href="">Skills</a>
+                            <a href="#skills">Competencias</a>
                         </li>
                         <li className="header-nav-item">
-                            <a href="">Contact</a>
+                            <a href="#contact">Contacto</a>
                         </li>
                     </nav>
                 </div>

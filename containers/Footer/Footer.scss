@@ -1,0 +1,10 @@
+.footer {
+    @include font-main;
+    background-color: $background-color6;
+
+    &-title {
+        text-align: center;
+        margin: 3px 0;
+        font-size: 12px;
+    }
+}

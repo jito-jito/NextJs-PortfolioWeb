@@ -1,0 +1,34 @@
+.contact {
+    @include display-flex-column;
+    @include font-main;
+    width: 100%;
+    background-color: $background-color5;
+
+    &-title, &-subTitle, &-email {
+        text-align: center;
+        margin: 5px;
+    }
+
+
+    &-title {
+        margin-top: 40px;
+    }
+    
+  
+    &-email {
+        margin-bottom: 10px;
+        color: $background-color1;
+    }
+
+    &-socialContainer {
+        @include display-flex-row;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 480px) {
+        &-title, &-subTitle, &-email {
+            font-size: 20px;
+        }
+    
+    }
+}

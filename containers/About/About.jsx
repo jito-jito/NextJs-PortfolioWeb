@@ -7,9 +7,9 @@ export default function About() {
 
     return(
         <>
-            <section className="page-container about">
+            <section className="page-container about" id='about'>
                 <h1 className="about-title">Sobre mí:</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ipsam repellendus recusandae, voluptas earum laboriosam unde consectetur placeat, voluptate repudiandae neque totam eaque similique ea! Magnam alias officia ea! Nihil?</p>
+                <p>Desarrollador con experiencia en maquetar y crear diseños en HTML y CSS, manejo de preprocesador SASS y uso del framework React en aplicaciones web junto con nextJS o solo react, con hooks implementando metodologías ágiles como SCRUM para aportar en el desarrollo de proyectos de manera efectiva.</p>
             </section>
 
         </>

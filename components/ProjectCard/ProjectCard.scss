@@ -6,6 +6,7 @@
     padding: 20px 0;
     background-color: $background-card-color1;
     border-radius: 28px;
+    margin-bottom: 30px;
 
     &-image {
         position: relative;
@@ -34,6 +35,10 @@
 
     &-title, &-subTitle, &-description, &-technologies {
         margin: 5px 0;
+    }
+
+    &-technologies {
+        max-width: 285px;
     }
 
     &-description, &-technologies {
@@ -119,6 +124,32 @@
             align-self: center;
             right: 0;
 
+        }
+    }
+
+    @media (max-width: 480px) {
+        &-image {
+            height: 80px;
+            left: 12px;
+
+            & > img {
+                position: absolute ;
+                left: -130px;
+            }
+        }
+    }
+
+    @media (max-width: 320px) {
+        &-image {
+            height: 80px;
+            left: 12px;
+
+            & > img {
+                // position: absolute ;
+                width: 210px;
+                height: 125px;
+                left: -115px;
+            }
         }
     }
 

@@ -1,0 +1,125 @@
+.projectCard {
+    @include display-flex-row;
+    @include font-main;
+    max-width: 790px;
+    height: fit-content;
+    padding: 20px 0;
+    background-color: $background-card-color1;
+    border-radius: 28px;
+
+    &-image {
+        position: relative;
+        flex-grow: 1;
+        width: 380px;
+        height: 155px;
+        margin: 0;
+        left: -8px;
+        img {
+            width: 100%;
+            height: inherit;
+        }
+    }
+
+    &-details {
+        @include display-flex-column;
+        position: relative;
+        flex-grow: 2;
+        align-items: flex-start;
+        width: 100%;
+    }
+    &-detailsContainer {
+        @include display-flex-row;
+        width: 100%;
+    }
+
+    &-title, &-subTitle, &-description, &-technologies {
+        margin: 5px 0;
+    }
+
+    &-description, &-technologies {
+        margin: 5px 25px 5px 10px;
+        font-size: 14px;
+    }
+    
+
+    &-button {
+        position: relative;
+        bottom: -5px;
+        right: 50px;
+        align-self: flex-end;
+        width: 100px;
+        height: 35px;
+        background-color: $bright-color;
+        font-weight: bold;
+        color: $background-color3;
+        border: none;
+        border-radius: 20px;
+    }
+
+    &-button:hover {
+        cursor: pointer;
+    }
+
+    @media (max-width: 1150px) {
+        &-button {
+            right: 25px;
+
+        }
+    }
+
+    @media (max-width: 1114px) {
+        &-button {
+            right: 15px;
+
+        }
+    }
+
+    @media (max-width: 630px) {
+        @include display-flex-column;
+        align-items: center;
+        margin-top: 50px;
+
+
+        &-details {
+            @include display-flex-column;
+            align-items: center;
+        }
+
+
+        &-detailsContainer {
+            @include display-flex-column;
+            align-items: center;
+        }
+
+        &-title, &-subTitle, &-description, &-technologies {
+            text-align: center;
+        }
+
+        &-description, &-technologies {
+            margin: 5px 20px;
+            
+        }
+        
+        &-image {
+            width: 0px;
+            top: -70px;
+            height: 90px;
+
+            & > img {
+                position: relative ;
+
+                width: 240px;
+                height: 140px;
+                left: -109px;
+            }
+        }
+
+
+        &-button {
+            align-self: center;
+            right: 0;
+
+        }
+    }
+
+}

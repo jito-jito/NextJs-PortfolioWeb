@@ -1,0 +1,9 @@
+.projects {
+    @include display-flex-column;
+    @include font-main;
+
+    &-title {
+        margin: 20px 0 30px 0;
+        align-self: flex-start;
+    }
+}

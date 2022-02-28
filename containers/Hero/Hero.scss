@@ -1,0 +1,42 @@
+.main {
+    @include display-flex-row;
+    @include font-main;
+
+
+    &-image {
+        position: relative;
+        bottom: -15px;
+        flex-grow: 1;
+        width: 500px;
+        height: 215px;
+        margin: 0;
+    }
+
+    &-title {
+        width: 100%;
+        flex-grow: 2;
+        font-size: 32px;
+    }
+
+
+    @media (max-width: 659px) {
+        @include display-flex-column;
+
+        &-image {
+            order: 2;
+        }
+
+        &-title {
+            text-align: center;
+        }
+        
+    }
+
+    @media (max-width: 450px) {
+        &-title {
+            font-size: 28px;
+        }
+        
+    }
+
+}

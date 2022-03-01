@@ -15,7 +15,7 @@ export default function Hero() {
                         objectFit='contain'
                     />
                 </figure>
-                <h1 className="main-title">Hola, Soy Sergio Sanhueza Osorio - Frontend Developer</h1>
+                <h1 className="main-title">Hola!, Soy Sergio Sanhueza Osorio - Frontend Developer</h1>
             </section>
 
         </>

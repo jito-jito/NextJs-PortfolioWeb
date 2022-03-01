@@ -7,7 +7,7 @@ export default function Skills() {
 
     return(
         <>
-            <section className="page-container skills" ID='skills'>
+            <section className="page-container skills" id='skills'>
                 <div className="skills-titleContainer">
                     <h1 className="skills-title">Competencias:</h1>
                     <figure className="skills-image">
@@ -41,6 +41,14 @@ export default function Skills() {
                         <SkillItem
                             img="/icon-git.png"
                             title="Git"
+                        />
+                        <SkillItem
+                            img="/icon-sass.png"
+                            title="SASS"
+                        />
+                        <SkillItem
+                            img="/icon-nextJs.png"
+                            title="NextJs"
                         />
                     </section>
                     <h2  className='skills-tools-title'>

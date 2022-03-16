@@ -15,6 +15,9 @@ export default function Home() {
   return (
     <>
       <Head>
+        <meta property="og:title" content="Sergio Sanhueza Portafolio Web" />
+        <meta property="og:description" content="portafolio personal" />
+        <meta property="og:image" content="/webImage.png" />
         <link rel="shortcut icon" href="/icon-portfolio.png" />
         <title>Sergio Sanhueza</title>
       </Head>

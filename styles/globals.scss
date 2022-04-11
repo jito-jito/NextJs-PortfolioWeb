@@ -7,6 +7,7 @@ $background-color3: #4C8E9D;
 $background-color4: #4F6266;
 $background-color5: #313131;
 $background-color6: #262626;
+$background-color7: #425154;
 $background-card-color1: #4F5456;
 $bright-color: #fff;
 $font-color1: #fff;
@@ -44,18 +45,22 @@ body {
 @import '../components/ProjectCard/ProjectCard.scss';
 @import '../components/SkillItem/SkillItem.scss';
 @import '../components/ContactItem/ContactItem.scss';
+@import '../components/PinnedRepo/PinnedRepos.scss';
+@import '../components/GithubActivity/GithubActivity.scss';
 
 @import '../containers/Header/Header.scss';
 @import '../containers/Hero/Hero.scss';
 @import '../containers/About/About.scss';
 @import '../containers/Projects/Projects.scss';
 @import '../containers/Skills/Skills.scss';
+@import '../containers/Github/Github.scss';
 @import '../containers/Contact/Contact.scss';
 @import '../containers/Footer/Footer.scss';
 
 .page-container {
   width: 100%;
   padding: 5px 200px;
+
 
   &.about {
 
@@ -69,11 +74,16 @@ body {
     background-color: $background-color3;
   }
 
-  
+  &.github {
+    padding: 5px 150px;
+  }
 
   @media (max-width: 1010px) {
     padding: 5px 150px;
-
+    &.github {
+      padding: 5px 100px;
+    }
+  
     .header {
       padding: 0px 150px;
     }  
@@ -82,6 +92,9 @@ body {
 
   @media (max-width: 960px) {
     padding: 5px 100px;
+    &.github {
+      padding: 5px 50px;
+    }
 
     .header {
       padding: 0px 100px;
@@ -98,7 +111,9 @@ body {
 
   @media (max-width: 420px) {
     padding: 5px 30px;
-
+    &.github {
+      padding: 5px 30px;
+    }
     .header {
       padding: 0px 30px;
     }  

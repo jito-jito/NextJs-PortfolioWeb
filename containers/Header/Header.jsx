@@ -25,6 +25,9 @@ export default function Header() {
                             <a href="#skills">Competencias</a>
                         </li>
                         <li className="header-nav-item">
+                            <a href="#gitHub">GitHub</a>
+                        </li>
+                        <li className="header-nav-item">
                             <a href="#contact">Contacto</a>
                         </li>
                     </nav>

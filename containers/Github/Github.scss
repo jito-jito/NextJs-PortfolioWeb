@@ -1,0 +1,41 @@
+.github {
+  width: 100%;
+  background-color: $background-color7;
+  font-family: $font-style1;
+  color: $font-color1;
+
+  &-title {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &-activity-mainRow{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      text-decoration: underline;
+    }
+  }
+
+  &-pinnedContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+    margin-bottom: 50px;
+  }
+
+  @media screen and (max-width: 1130px) {
+    &-pinnedContainer {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    &-pinnedContainer {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+}

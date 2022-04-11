@@ -1,0 +1,111 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 370px;
+  padding: 15px 30px;
+  background-color: $background-card-color1;
+  border: 1px solid #1B1B1C;
+  border-radius: 20px;
+  font-size: 14px;
+  
+  &-container.main {
+    @include display-flex-row;
+  }
+
+  &-container.title {
+    @include display-flex-row;
+    // margin-bottom: 10px;
+  }
+  &-container.date {
+    @include display-flex-row;
+
+    p {
+      margin: 0;
+    }
+  }
+  &-container.tecnologies-links {
+    @include display-flex-row;
+  }
+
+  & h3 {
+    margin: 0;
+  }
+  &-githubLink, &-webLink {
+    margin-left: 10px;
+    figure {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      margin: 0;
+    }
+  
+
+  }
+
+  &-container {
+    
+    
+    &-img {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      margin: 0 10px 0 0;
+    }
+
+    &-repoTitle {
+      margin: 0 10px 0 0;
+      font-size: 16px;
+    }
+    &-plublicBtn {
+      background: none;
+      border: 1px solid white;
+      color: white;
+      border-radius: 15px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+  
+
+
+    &-techItem {
+      @include display-flex-row;
+      width: fit-content;
+      margin: 5px;
+      div {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        background: blanchedalmond;
+        border-radius: 100%;
+
+      } 
+      p {
+        margin: 0;
+      }     
+    }
+
+    &-tecnologies {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    &-links {
+      @include display-flex-row
+    }
+
+   
+  }
+
+  &-description {
+    min-height: 40px;
+    margin: 15px 0;
+  }
+
+  @media screen and (max-width: 720px) {
+    &-description {
+      text-align: center;
+    }
+  }
+}

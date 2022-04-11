@@ -1,3 +1,3 @@
 # NextJs Portfolio web
 
-My personal portfolio web, created with NextJs and SASS
+My personal portfolio, created with NextJs and SASS, deploy in Vercel

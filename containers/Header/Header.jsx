@@ -2,7 +2,10 @@ import React from "react";
 import Image from "next/image";
 
 
-export default function Header() {
+export default function Header({
+    loadingData,
+    error
+}) {
 
 
     return(
@@ -24,9 +27,12 @@ export default function Header() {
                         <li className="header-nav-item">
                             <a href="#skills">Competencias</a>
                         </li>
-                        <li className="header-nav-item">
-                            <a href="#gitHub">GitHub</a>
-                        </li>
+                        { !loadingData && !error && 
+                            <li className="header-nav-item">
+                                <a href="#gitHub">GitHub</a>
+                            </li>
+                        }
+                        
                         <li className="header-nav-item">
                             <a href="#contact">Contacto</a>
                         </li>

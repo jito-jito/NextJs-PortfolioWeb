@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 import Header from '../containers/Header/Header.jsx'
 import Hero from '../containers/Hero/Hero.jsx'
@@ -11,14 +9,55 @@ import Skills from '../containers/Skills/Skills.jsx'
 import Github from '../containers/Github/Github.jsx'
 import Contact from '../containers/Contact/Contact.jsx'
 import Footer from '../containers/Footer/Footer'
-import { ApolloClient, createHttpLink, InMemoryCache, gql } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-
+import { gql, useQuery } from '@apollo/client';
 
 
 
 export default function Home(props) {
 
+  const QUERY_GET_DATA= gql`
+  {
+    user(login: "jito-jito") {
+      pinnableItems(first: 6) {
+        nodes {
+          ... on Repository {
+            id
+            name
+            description
+            languages(first: 10) {
+              nodes {
+                color
+                id
+                name
+              }
+            }
+            homepageUrl
+            url
+            updatedAt
+          }
+        }
+      }
+      repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 5) {
+        edges {
+          node {
+            id
+            createdAt
+            name
+            url
+            languages(first: 10) {
+              nodes {
+                color
+                name
+                id
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  `
+  const { loading, error, data } = useQuery(QUERY_GET_DATA);
 
   return (
     <>
@@ -29,7 +68,10 @@ export default function Home(props) {
         <link rel="shortcut icon" href="/icon-portfolio.png" />
         <title>Sergio Sanhueza</title>
       </Head>
-      <Header></Header>
+      <Header 
+        loadingData={loading}
+        error={error}
+      />
       <Hero />
       <About />
       <Projects>
@@ -59,10 +101,10 @@ export default function Home(props) {
 
       </Projects>
       <Skills/>
-      { props.data &&
+      { !loading && !error &&
         <Github 
-          pinnedRepos={props.data.user.pinnableItems}
-          activity={props.data.user.repositories}
+          pinnedRepos={data.user.pinnableItems}
+          activity={data.user.repositories}
         />
       }
       
@@ -70,76 +112,4 @@ export default function Home(props) {
       <Footer/>
     </>
   )
-}
-
-
-export async function getStaticProps(context) {
-  const httpLink = createHttpLink({
-    uri: 'https://api.github.com/graphql',
-  });
-  
-  const authLink = setContext((_, { headers }) => {
-    return {
-      headers: {
-        ...headers,
-        authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
-      }
-    }
-  });
-    
-  const client = new ApolloClient({
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache()
-  });
-  
-    
-  const data = await client.query({
-    query: gql`
-    {
-      user(login: "jito-jito") {
-        pinnableItems(first: 6) {
-          nodes {
-            ... on Repository {
-              id
-              name
-              description
-              languages(first: 10) {
-                nodes {
-                  color
-                  id
-                  name
-                }
-              }
-              homepageUrl
-              url
-              updatedAt
-            }
-          }
-        }
-        repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 5) {
-          edges {
-            node {
-              id
-              createdAt
-              name
-              url
-              languages(first: 10) {
-                nodes {
-                  color
-                  name
-                  id
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    `
-  })
-  console.log(data);
-  
-  return {
-    props: data,
-  }
 }
